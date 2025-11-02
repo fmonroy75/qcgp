@@ -1,85 +1,121 @@
 :root{
-    --blue-qc: #004C97;
-    --green-accent: #2F855A;
-    --muted: #6b7280;
-    --bg: #ffffff;
+  --dark: #0A192F;
+  --accent: #F4A261;
+  --muted: #6c7a89;
+  --nav-h: 100px;
+}
+
+/* Reset & body */
+*{ box-sizing: border-box; }
+html,body{ height:100%; }
+body{
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  margin:0;
+  color:#0b1220;
+  background:#fff;
+  scroll-behavior:smooth;
+}
+
+/* NAVBAR */
+#mainNavbar{
+  background: #ffffff;
+  padding: 1rem 0;
+  box-shadow: 0 2px 10px rgba(9,18,35,0.08);
+  transition: box-shadow 0.4s ease, padding 0.3s ease;
+  z-index:1200;
+}
+#mainNavbar .navbar-brand{
+  transition: transform 0.3s ease;
+}
+#mainNavbar.scrolled{
+  box-shadow: 0 8px 30px rgba(9,18,35,0.12);
+  padding: 0.5rem 0;
+}
+#mainNavbar.scrolled .navbar-brand .h6,
+#mainNavbar.scrolled .navbar-brand small{
+  font-size: 0.9em;
+  transition: font-size 0.3s ease;
+}
+#brandLogo{
+  height: 100px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 6px;
+  background: #fff;
+  padding:6px;
+  transition: height 0.3s ease;
+}
+#mainNavbar.scrolled #brandLogo{
+  height: 60px;
+}
+
+/* HERO */
+.hero{
+  position: relative;
+  min-height: 100vh;
+  padding-top: calc(var(--nav-h) + 60px);
+  background-image: url('https://images.unsplash.com/photo-1528892952291-009c663ce843?auto=format&fit=crop&w=1920&q=80');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+.hero-overlay{
+  position:absolute; inset:0;
+  background: linear-gradient(180deg, rgba(10,25,47,0.6), rgba(10,25,47,0.55));
+  z-index:0;
+}
+.hero-content{ z-index:2; max-width: 980px; padding: 2rem; color:#fff; }
+#typewriter{
+  font-size: clamp(1.6rem, 2.8vw, 2.8rem);
+  font-weight:700;
+  line-height:1.05;
+  margin:0 auto 0.5rem;
+  color:#fff;
+  display:inline-block;
+  border-right: 3px solid rgba(255,255,255,0.95);
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* Buttons */
+.btn-accent{
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #061224;
+}
+.btn-outline-accent{ border:1px solid var(--accent); color:var(--accent); }
+
+/* Sections */
+section{ padding: 4.5rem 0; }
+h2{ font-weight:700; color:var(--dark); margin-bottom:1rem; }
+.lead{ color:var(--muted); }
+#mission p,
+#vision p{
+  display: block;
+  line-height: 1.8;
+  white-space: normal;
+  overflow: visible;
+}
+
+/* Cards */
+.card{ border:none; border-radius: 12px; overflow:hidden; }
+.card img{ height: 220px; object-fit:cover; }
+
+/* Footer */
+.footer-dark{ background: var(--dark); color: #fff; }
+
+/* Responsive tweaks */
+@media (max-width: 991px){
+  #brandLogo{ height:72px; }
+  #mainNavbar.scrolled #brandLogo{ height: 50px; }
+  .hero{ 
+    padding-top: calc(var(--nav-h) + 20px); 
+    min-height:70vh; 
+    background-attachment: scroll;
   }
-  
-  html,body{
-    height:100%;
-    scroll-behavior:smooth;
-    font-family: "Nunito Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    color: #333;
-    background: var(--bg);
-  }
-  
-  /* HERO PARALLAX */
-  .hero-section{
-    min-height:80vh;
-    background-image: url('../img/quebec-city.jpg');
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-    position: relative;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-  }
-  .hero-section .overlay{
-    position:absolute;
-    inset:0;
-    background: linear-gradient(180deg, rgba(24,58,96,0.55), rgba(20,50,80,0.55));
-  }
-  
-  /* hero text */
-  .hero-section .container{ z-index:2; }
-  .hero-section h1{ font-weight:700; color:#fff; }
-  .hero-section p{ color: #e6eef6; }
-  
-  /* CTA */
-  .btn-success{
-    background: var(--green-accent);
-    border-color: var(--green-accent);
-  }
-  .btn-success:hover{
-    background: #276d4a;
-    border-color: #276d4a;
-  }
-  
-  /* Parallax projects section */
-  .parallax-section{
-    min-height:50vh;
-    background-image: url('../img/projects-bg.jpg');
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-    position: relative;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-  }
-  .parallax-section .overlay-dark{
-    position:absolute; inset:0; background: rgba(0,0,0,0.45);
-  }
-  
-  /* Cards */
-  .card img{ object-fit:cover; height:180px; }
-  
-  /* Navbar link colors */
-  .nav-link{ color:var(--muted) !important; }
-  .nav-link:hover{ color: var(--blue-qc) !important; }
-  
-  /* small screens logo */
-  #logo-img{ max-height:200px; }
-  
-  /* Footer */
-  footer a{ color:var(--blue-qc); text-decoration:none; }
-  footer a:hover{ text-decoration:underline; }
-  
-  /* Responsive tweaks */
-  @media (max-width: 991px){
-    .hero-section{ min-height:60vh; background-attachment: scroll; }
-    .parallax-section{ background-attachment: scroll; }
-    #logo-img{ height:100px; }
-  }
-  
+  #typewriter{ font-size:1.5rem; border-right:2px solid rgba(255,255,255,0.9); }
+}

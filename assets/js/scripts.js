@@ -1,127 +1,127 @@
-// scripts.js
+/* main.js
+   - typewriter (runs once)
+   - navbar color change on scroll
+   - smooth scroll for .scroll-link
+   - language toggle (ES/FR) updating text via data map
+   - contact button (visual)
+*/
+
 document.addEventListener('DOMContentLoaded', () => {
-    // Set current year in footer
-    document.getElementById('year').textContent = new Date().getFullYear();
-  
-    // Language data (ES default)
-    const translations = {
-      es: {
-        nav_inicio: "Inicio",
-        nav_nosotros: "Quiénes Somos",
-        nav_servicios: "Servicios",
-        nav_proyectos: "Proyectos",
-        nav_contacto: "Contacto",
-        hero_title: "Gestión y acompañamiento de proyectos en Québec",
-        hero_sub: "Formación, apoyo tecnológico y reciclaje electrónico para emprendedores y comunidades.",
-        cta_contact: "Contáctanos",
-        nos_titulo: "Quiénes Somos",
-        nos_text: "Somos una organización sin fines de lucro dedicada a la gestión de proyectos sociales, tecnológicos y educativos. Promovemos el desarrollo sostenible mediante formación, acompañamiento técnico y programas de reciclaje electrónico.",
-        mision_t: "Misión",
-        mision: "Promover el desarrollo sostenible y la innovación en Québec mediante la gestión integral de proyectos y la formación.",
-        vision_t: "Visión",
-        vision: "Ser reconocidos en Québec por nuestro acompañamiento a emprendedores y proyectos de impacto social.",
-        valores_t: "Valores",
-        valores: "Confianza · Excelencia · Respeto · Transparencia · Integridad · Sostenibilidad",
-        serv_titulo: "Nuestros Servicios",
-        serv1_t: "Cursos y certificaciones",
-        serv1: "PMP, PM, Cisco y formación en idiomas para fortalecer competencias.",
-        serv2_t: "Sitios web y apoyo digital",
-        serv2: "Desarrollo web para startups y soporte técnico para emprendedores.",
-        serv3_t: "Reciclaje electrónico",
-        serv3: "Recolección, reparación y redistribución de equipos a bajo costo para quienes lo necesiten.",
-        proj_t: "Proyectos",
-        proj_text: "Colaboramos con comunidades, empresas e instituciones en iniciativas educativas, tecnológicas y ambientales.",
-        contact_t: "Contáctanos",
-        contact_name: "Nombre / Nom",
-        contact_email: "Correo / Courriel",
-        contact_message: "Mensaje / Message",
-        contact_send: "Enviar"
-      },
-      fr: {
-        nav_inicio: "Accueil",
-        nav_nosotros: "À propos",
-        nav_servicios: "Services",
-        nav_proyectos: "Projets",
-        nav_contacto: "Contact",
-        hero_title: "Gestion et accompagnement de projets au Québec",
-        hero_sub: "Formation, soutien technologique et recyclage électronique pour entrepreneurs et communautés.",
-        cta_contact: "Nous contacter",
-        nos_titulo: "Qui sommes-nous",
-        nos_text: "Nous sommes une organisation à but non lucratif dédiée à la gestion de projets sociaux, technologiques et éducatifs. Nous promouvons le développement durable par la formation, l'accompagnement technique et des programmes de recyclage électronique.",
-        mision_t: "Mission",
-        mision: "Promouvoir le développement durable et l'innovation au Québec grâce à la gestion intégrale de projets et à la formation.",
-        vision_t: "Vision",
-        vision: "Être reconnus au Québec pour notre accompagnement des entrepreneurs et des projets à impact social.",
-        valores_t: "Valeurs",
-        valores: "Confiance · Excellence · Respect · Transparence · Intégrité · Durabilité",
-        serv_titulo: "Nos Services",
-        serv1_t: "Formations et certifications",
-        serv1: "PMP, PM, Cisco et formation en langues pour renforcer les compétences.",
-        serv2_t: "Sites web et soutien digital",
-        serv2: "Développement web pour startups et assistance technique pour entrepreneurs.",
-        serv3_t: "Recyclage électronique",
-        serv3: "Collecte, réparation et redistribution d'équipements à bas coût pour ceux qui en ont besoin.",
-        proj_t: "Projets",
-        proj_text: "Nous collaborons avec des communautés, entreprises et institutions sur des initiatives éducatives, technologiques et environnementales.",
-        contact_t: "Contactez-nous",
-        contact_name: "Nombre / Nom",
-        contact_email: "Courriel",
-        contact_message: "Message",
-        contact_send: "Envoyer"
+  // ---------- year in footer ----------
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  // ---------- Navbar behavior ----------
+  const navbar = document.getElementById('mainNavbar');
+  const adjustNavbar = () => {
+    if (window.scrollY > 60) navbar.classList.add('scrolled');
+    else navbar.classList.remove('scrolled');
+  };
+  adjustNavbar();
+  window.addEventListener('scroll', adjustNavbar);
+
+  // ---------- Smooth scroll for nav links ----------
+  document.querySelectorAll('.scroll-link, .nav-link').forEach(link => {
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href');
+      if (!href || !href.startsWith('#')) return;
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (!target) return;
+      const offset = navbar.offsetHeight + 8;
+      const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
+      // close collapsed menu on mobile
+      const bsCollapse = document.querySelector('.navbar-collapse');
+      if (bsCollapse && bsCollapse.classList.contains('show')) {
+        new bootstrap.Collapse(bsCollapse).hide();
       }
-    };
-  
-    // Utility to apply selected language
-    function applyLang(lang) {
-      const nodes = document.querySelectorAll('[data-lang-key]');
-      nodes.forEach(n => {
-        const key = n.getAttribute('data-lang-key');
-        if (translations[lang] && translations[lang][key]) n.textContent = translations[lang][key];
-      });
-  
-      // placeholders
-      const phNodes = document.querySelectorAll('[data-lang-key-placeholder]');
-      phNodes.forEach(n => {
-        const key = n.getAttribute('data-lang-key-placeholder');
-        if (translations[lang] && translations[lang][key]) n.placeholder = translations[lang][key];
-      });
-  
-      // Update active button styles
-      document.getElementById('lang-es').classList.toggle('active', lang === 'es');
-      document.getElementById('lang-fr').classList.toggle('active', lang === 'fr');
-      document.getElementById('off-lang-es') && document.getElementById('off-lang-es').classList.toggle('active', lang === 'es');
-      document.getElementById('off-lang-fr') && document.getElementById('off-lang-fr').classList.toggle('active', lang === 'fr');
-    }
-  
-    // Default Spanish
-    applyLang('es');
-  
-    // Language buttons
-    document.getElementById('lang-es').addEventListener('click', () => applyLang('es'));
-    document.getElementById('lang-fr').addEventListener('click', () => applyLang('fr'));
-    document.getElementById('off-lang-es') && document.getElementById('off-lang-es').addEventListener('click', () => applyLang('es'));
-    document.getElementById('off-lang-fr') && document.getElementById('off-lang-fr').addEventListener('click', () => applyLang('fr'));
-  
-    // Smooth scroll for links with .scroll-to
-    document.querySelectorAll('a[href^="#"].scroll-to, .nav-link').forEach(link => {
-      link.addEventListener('click', function(e){
-        const targetId = this.getAttribute('href');
-        if (!targetId || targetId === '#') return;
-        e.preventDefault();
-        const t = document.querySelector(targetId);
-        if (!t) return;
-        const rectTop = t.getBoundingClientRect().top + window.pageYOffset - 80; // offset for sticky nav
-        window.scrollTo({ top: rectTop, behavior: 'smooth' });
-        // close offcanvas if open (mobile)
-        const off = bootstrap.Offcanvas.getInstance(document.getElementById('offcanvasMenu'));
-        if (off) off.hide();
-      });
     });
-  
-    // Contact button (visual)
-    document.getElementById('sendBtn').addEventListener('click', () => {
-      alert('Formulario visual — sin envío real por ahora.');
-    });
-  
   });
-  
+
+  // ---------- Typewriter effect (once) ----------
+  const typeEl = document.getElementById('typewriter');
+  const typeText = "Gestión de proyectos con propósito y sostenibilidad.";
+  if (typeEl) {
+    let i = 0;
+    function typeOnce() {
+      if (i < typeText.length) {
+        typeEl.textContent += typeText.charAt(i);
+        i++;
+        setTimeout(typeOnce, 50);
+      } else {
+        // stop cursor after short delay
+        setTimeout(()=> typeEl.style.borderRight = 'none', 400);
+      }
+    }
+    typeOnce();
+  }
+
+  // ---------- Language toggle (ES/FR) ----------
+  const translations = {
+    es: {
+      nav_home: "Inicio", nav_about: "Quiénes Somos", nav_services: "Servicios", nav_mission: "Misión", nav_vision: "Visión", nav_contact: "Contacto",
+      hero_sub: "Apoyamos la innovación, el desarrollo y la colaboración sostenible en Québec y más allá.",
+      cta_about: "Conócenos",
+      about_title: "Quiénes Somos",
+      about_text: "Québec Gestion des Projets (QGP) es una organización sin fines de lucro que impulsa proyectos con propósito y sostenibilidad. Ofrecemos formación, acompañamiento técnico, consultorías y programas de reciclaje electrónico para apoyar a emprendedores y comunidades.",
+      services_title: "Servicios",
+      srv_courses: "Cursos y certificaciones", srv_courses_txt: "PMP, PM, Cisco y formación en idiomas para emprendedores y equipos.",
+      srv_web: "Sitios web y acompañamiento", srv_web_txt: "Desarrollo para startups y soporte técnico.",
+      srv_trans: "Traducción e interpretación", srv_trans_txt: "Servicios lingüísticos profesionales en ES/FR/EN.",
+      srv_recycle: "Reciclaje electrónico", srv_recycle_txt: "Recolección y reacondicionamiento de equipos.",
+      mission_title: "Misión", mission_text: "Promover el desarrollo sostenible y la innovación en Québec mediante la gestión integral de proyectos, la formación y el acompañamiento a emprendedores.",
+      vision_title: "Visión", vision_text: "Ser referentes en Québec en gestión y acompañamiento de emprendedores con impacto social y ambiental.",
+      contact_title: "Contacto", ph_name: "Nombre", ph_email: "Correo", ph_message: "Mensaje", contact_send: "Enviar"
+    },
+    fr: {
+      nav_home: "Accueil", nav_about: "Qui sommes-nous", nav_services: "Services", nav_mission: "Mission", nav_vision: "Vision", nav_contact: "Contact",
+      hero_sub: "Nous soutenons l'innovation, le développement et la collaboration durable au Québec et au-delà.",
+      cta_about: "Nous connaître",
+      about_title: "Qui sommes-nous",
+      about_text: "Québec Gestion des Projets (QGP) est une organisation à but non lucratif qui soutient des projets à vocation durable. Nous offrons formation, accompagnement technique, conseils et programmes de recyclage électronique pour aider entrepreneurs et communautés.",
+      services_title: "Services",
+      srv_courses: "Formations et certifications", srv_courses_txt: "PMP, PM, Cisco et formation en langues pour entrepreneurs et équipes.",
+      srv_web: "Sites web et accompagnement", srv_web_txt: "Développement pour startups et support technique.",
+      srv_trans: "Traduction et interprétation", srv_trans_txt: "Services linguistiques professionnels en FR/EN/ES.",
+      srv_recycle: "Recyclage électronique", srv_recycle_txt: "Collecte et remise en état d'équipements.",
+      mission_title: "Mission", mission_text: "Promouvoir le développement durable et l'innovation au Québec grâce à la gestion intégrée de projets, la formation et l'accompagnement des entrepreneurs.",
+      vision_title: "Vision", vision_text: "Être une référence au Québec en gestion et accompagnement d'entrepreneurs à impact social et environnemental.",
+      contact_title: "Contact", ph_name: "Nom", ph_email: "Courriel", ph_message: "Message", contact_send: "Envoyer"
+    }
+  };
+
+  // function to apply language
+  function applyLang(lang) {
+    // text nodes keyed by data-i18n
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (translations[lang] && translations[lang][key]) el.textContent = translations[lang][key];
+    });
+    // placeholders
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      const key = el.getAttribute('data-i18n-placeholder');
+      if (translations[lang] && translations[lang][key]) el.placeholder = translations[lang][key];
+    });
+    // update active label
+    const label = document.getElementById('activeLangLabel');
+    if (label) label.textContent = lang.toUpperCase();
+  }
+
+  // default Spanish
+  applyLang('es');
+
+  // language buttons
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const lang = btn.getAttribute('data-lang');
+      applyLang(lang);
+    });
+  });
+
+  // contact button (visual)
+  const sendBtn = document.getElementById('sendBtn');
+  if (sendBtn) sendBtn.addEventListener('click', () => {
+    alert('Formulario visual — sin envío real por ahora.');
+  });
+});

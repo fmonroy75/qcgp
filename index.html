@@ -2,154 +2,140 @@
 <html lang="es">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Québec Gestion des Projets</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Québec Gestion des Projets | ONG de desarrollo y sostenibilidad</title>
+
+  <!-- SEO / Social -->
+  <meta name="description" content="Québec Gestion des Projets — Gestión de proyectos con propósito y sostenibilidad. Formación y acompañamiento en Québec.">
+  <meta property="og:title" content="Québec Gestion des Projets">
+  <meta property="og:description" content="Gestión de proyectos con propósito y sostenibilidad.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/img/logo.png">
+  <meta name="twitter:card" content="summary_large_image">
 
   <!-- Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Google Font: Nunito Sans -->
-  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Google Font: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="asset/css/style.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
 
-  <!-- Icons (Bootstrap Icons) -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <!-- Favicon -->
+  <link rel="icon" href="assets/img/logo.png" type="image/png">
 </head>
 <body>
 
   <!-- NAVBAR -->
-  <header class="sticky-top bg-white shadow-sm">
-    <nav class="container d-flex align-items-center justify-content-between py-3">
-      <a class="d-flex align-items-center gap-3 text-decoration-none" href="#inicio">
-        <img src="asset/img/logo.png" alt="Québec Gestion des Projets" id="logo-img" style="height:200px;">
-        <div class="d-none d-md-block">
-          <span class="h6 mb-0 text-primary-800 fw-bold">Québec Gestion</span><br>
+  <nav id="mainNavbar" class="navbar navbar-expand-lg fixed-top navbar-light">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#home">
+        <img src="assets/img/logo.png" style="height: 100px;" alt="Québec Gestion des Projets" id="brandLogo">
+        <div class="ms-2 d-none d-md-block">
+          <div class="h6 mb-0 brand-line">Québec Gestion</div>
           <small class="text-muted">des Projets</small>
         </div>
       </a>
 
-      <div class="d-flex align-items-center gap-3">
-        <ul class="nav d-none d-lg-flex">
-          <li class="nav-item"><a class="nav-link px-3" href="#inicio" data-lang-key="nav_inicio">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link px-3" href="#nosotros" data-lang-key="nav_nosotros">Quiénes Somos</a></li>
-          <li class="nav-item"><a class="nav-link px-3" href="#servicios" data-lang-key="nav_servicios">Servicios</a></li>
-          <li class="nav-item"><a class="nav-link px-3" href="#proyectos" data-lang-key="nav_proyectos">Proyectos</a></li>
-          <li class="nav-item"><a class="nav-link px-3" href="#contacto" data-lang-key="nav_contacto">Contacto</a></li>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+        <ul class="navbar-nav align-items-lg-center me-3">
+          <li class="nav-item"><a class="nav-link" href="#home" data-i18n="nav_home">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about" data-i18n="nav_about">Quiénes Somos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services" data-i18n="nav_services">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link" href="#mission" data-i18n="nav_mission">Misión</a></li>
+          <li class="nav-item"><a class="nav-link" href="#vision" data-i18n="nav_vision">Visión</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact" data-i18n="nav_contact">Contacto</a></li>
         </ul>
 
-        <!-- Language selector -->
-        <div class="d-flex align-items-center gap-2 ms-2">
-          <button id="lang-es" class="btn btn-sm btn-outline-success d-flex align-items-center gap-1">
-            <span class="fs-6">🇪🇸</span><span class="d-none d-md-inline">ES</span>
+        <!-- Language dropdown (globe) -->
+        <div class="dropdown ms-2">
+          <button class="btn btn-outline-secondary btn-sm dropdown-toggle d-flex align-items-center gap-2" id="langDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="fs-5">🌐</span><span id="activeLangLabel" class="d-none d-md-inline">ES</span>
           </button>
-          <button id="lang-fr" class="btn btn-sm btn-outline-primary d-flex align-items-center gap-1">
-            <span class="fs-6">🇫🇷</span><span class="d-none d-md-inline">FR</span>
-          </button>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langDropdown">
+            <li><button class="dropdown-item lang-btn" data-lang="es">🇪🇸 Español</button></li>
+            <li><button class="dropdown-item lang-btn" data-lang="fr">🇫🇷 Français</button></li>
+          </ul>
         </div>
-
-        <!-- Mobile menu toggle -->
-        <button class="btn btn-light d-lg-none ms-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu">
-          <i class="bi bi-list"></i>
-        </button>
       </div>
-    </nav>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="home" class="hero d-flex align-items-center">
+    <div class="hero-overlay"></div>
+    <div class="container text-center hero-content">
+      <h1 id="typewriter" class="mb-3"></h1>
+      <p id="hero-sub" class="lead mb-4" data-i18n="hero_sub">Apoyamos la innovación, el desarrollo y la colaboración sostenible en Québec y más allá.</p>
+      <a class="btn btn-accent btn-lg scroll-link" href="#about" data-i18n="cta_about">Conócenos</a>
+    </div>
   </header>
 
-  <!-- Offcanvas mobile menu -->
-  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasMenu">
-    <div class="offcanvas-header">
-      <h5 class="offcanvas-title">Menu</h5>
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
-    </div>
-    <div class="offcanvas-body">
-      <nav class="nav flex-column">
-        <a class="nav-link" href="#inicio" data-lang-key="nav_inicio">Inicio</a>
-        <a class="nav-link" href="#nosotros" data-lang-key="nav_nosotros">Quiénes Somos</a>
-        <a class="nav-link" href="#servicios" data-lang-key="nav_servicios">Servicios</a>
-        <a class="nav-link" href="#proyectos" data-lang-key="nav_proyectos">Proyectos</a>
-        <a class="nav-link" href="#contacto" data-lang-key="nav_contacto">Contacto</a>
-      </nav>
-      <div class="mt-4 d-flex gap-2">
-        <button id="off-lang-es" class="btn btn-outline-success">🇪🇸 ES</button>
-        <button id="off-lang-fr" class="btn btn-outline-primary">🇫🇷 FR</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- HERO (PARALLAX) -->
-  <section id="inicio" class="hero-section d-flex align-items-center">
-    <div class="overlay"></div>
-    <div class="container text-center text-white position-relative">
-      <h1 class="display-5 fw-bold mb-3" data-lang-key="hero_title">Gestión y acompañamiento de proyectos en Québec</h1>
-      <p class="lead mb-4" data-lang-key="hero_sub">Formación, apoyo tecnológico y reciclaje electrónico para emprendedores y comunidades.</p>
-      <a href="#contacto" class="btn btn-success btn-lg scroll-to" data-lang-key="cta_contact">Contáctanos</a>
-    </div>
-  </section>
-
-  <!-- QUIÉNES SOMOS -->
-  <section id="nosotros" class="py-5 bg-light">
+  <!-- ABOUT -->
+  <section id="about" class="py-5">
     <div class="container">
       <div class="row align-items-center gy-4">
-        <div class="col-md-6" data-lang-key="nos_img">
-          <img src="asset/img/curso.jpg" alt="Nosotros" class="img-fluid rounded shadow-sm">
+        <div class="col-lg-6">
+          <h2 data-i18n="about_title">Quiénes Somos</h2>
+          <p class="text-muted" data-i18n="about_text">
+            Québec Gestion des Projets (QGP) es una organización sin fines de lucro que impulsa proyectos con propósito y sostenibilidad.
+            Ofrecemos formación, acompañamiento técnico, consultorías y programas de reciclaje electrónico para apoyar a emprendedores y comunidades.
+          </p>
+          <a href="#services" class="btn btn-outline-accent scroll-link" data-i18n="about_cta">Ver servicios</a>
         </div>
-        <div class="col-md-6">
-          <h2 class="fw-bold mb-3" data-lang-key="nos_titulo">Quiénes Somos</h2>
-          <p class="text-muted" data-lang-key="nos_text">Somos una organización sin fines de lucro dedicada a la gestión de proyectos sociales, tecnológicos y educativos. Promovemos el desarrollo sostenible mediante formación, acompañamiento técnico y programas de reciclaje electrónico.</p>
-
-          <div class="row mt-4">
-            <div class="col-sm-6 mb-3">
-              <h6 class="fw-semibold" data-lang-key="mision_t">Misión</h6>
-              <p class="small text-muted" data-lang-key="mision">Promover el desarrollo sostenible y la innovación en Québec mediante la gestión integral de proyectos y la formación.</p>
-            </div>
-            <div class="col-sm-6 mb-3">
-              <h6 class="fw-semibold" data-lang-key="vision_t">Visión</h6>
-              <p class="small text-muted" data-lang-key="vision">Ser reconocidos en Québec por nuestro acompañamiento a emprendedores y proyectos de impacto social.</p>
-            </div>
-            <div class="col-12 mt-2">
-              <h6 class="fw-semibold" data-lang-key="valores_t">Valores</h6>
-              <p class="small text-muted" data-lang-key="valores">Confianza · Excelencia · Respeto · Transparencia · Integridad · Sostenibilidad</p>
-            </div>
-          </div>
-
+        <div class="col-lg-6">
+          <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80" alt="Equipo" class="img-fluid rounded shadow-sm">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SERVICIOS -->
-  <section id="servicios" class="py-5">
+  <!-- SERVICES -->
+  <section id="services" class="py-5 bg-light">
     <div class="container">
-      <h2 class="text-center fw-bold mb-4" data-lang-key="serv_titulo">Nuestros Servicios</h2>
-      <div class="row gy-4">
-        <div class="col-md-4">
+      <h2 class="text-center mb-4" data-i18n="services_title">Servicios</h2>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
           <div class="card h-100 shadow-sm">
-            <img src="asset/img/curso.jpg" class="card-img-top" alt="Cursos">
+            <img src="https://images.unsplash.com/photo-1581091012184-5c61c8e7aef1?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Cursos">
             <div class="card-body">
-              <h5 class="card-title" data-lang-key="serv1_t">Cursos y certificaciones</h5>
-              <p class="card-text text-muted" data-lang-key="serv1">PMP, PM, Cisco y formación en idiomas para fortalecer competencias.</p>
+              <h5 class="card-title" data-i18n="srv_courses">Cursos y certificaciones</h5>
+              <p class="card-text text-muted" data-i18n="srv_courses_txt">PMP, PM, Cisco y formación en idiomas para emprendedores y equipos.</p>
             </div>
           </div>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-6 col-lg-3">
           <div class="card h-100 shadow-sm">
-            <img src="asset/img/web.jpg" class="card-img-top" alt="Sitios web">
+            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Web">
             <div class="card-body">
-              <h5 class="card-title" data-lang-key="serv2_t">Sitios web y apoyo digital</h5>
-              <p class="card-text text-muted" data-lang-key="serv2">Desarrollo web para startups y soporte técnico para emprendedores.</p>
+              <h5 class="card-title" data-i18n="srv_web">Sitios web y acompañamiento</h5>
+              <p class="card-text text-muted" data-i18n="srv_web_txt">Desarrollo para startups y soporte técnico.</p>
             </div>
           </div>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-6 col-lg-3">
           <div class="card h-100 shadow-sm">
-            <img src="asset/img/reciclaje.jpg" class="card-img-top" alt="Reciclaje electrónico">
+            <img src="https://images.unsplash.com/photo-1588774063386-219c59e45b6d?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Traducción">
             <div class="card-body">
-              <h5 class="card-title" data-lang-key="serv3_t">Reciclaje electrónico</h5>
-              <p class="card-text text-muted" data-lang-key="serv3">Recolección, reparación y redistribución de equipos a bajo costo para quienes lo necesiten.</p>
+              <h5 class="card-title" data-i18n="srv_trans">Traducción e interpretación</h5>
+              <p class="card-text text-muted" data-i18n="srv_trans_txt">Servicios lingüísticos profesionales en ES/FR/EN para proyectos y eventos.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 shadow-sm">
+            <img src="https://images.unsplash.com/photo-1503596476-1c12a8ba09a8?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Reciclaje">
+            <div class="card-body">
+              <h5 class="card-title" data-i18n="srv_recycle">Reciclaje electrónico</h5>
+              <p class="card-text text-muted" data-i18n="srv_recycle_txt">Recolección, reparación y redistribución de equipos a bajo costo.</p>
             </div>
           </div>
         </div>
@@ -157,66 +143,63 @@
     </div>
   </section>
 
-  <!-- PROYECTOS (parallax background) -->
-  <section id="proyectos" class="parallax-section text-white d-flex align-items-center">
-    <div class="overlay-dark"></div>
-    <div class="container text-center py-5">
-      <h2 class="fw-bold mb-3" data-lang-key="proj_t">Proyectos</h2>
-      <p class="lead mb-4" data-lang-key="proj_text">Colaboramos con comunidades, empresas e instituciones en iniciativas educativas, tecnológicas y ambientales.</p>
-      <div class="row g-3 justify-content-center">
-        <div class="col-md-4">
-          <div class="card bg-white text-dark h-100">
-            <img src="asset/img/projects-bg.jpg" class="card-img-top" alt="Proyecto 1">
-            <div class="card-body">
-              <h6 class="card-title">Proyecto ejemplo A</h6>
-              <p class="small text-muted">Descripción breve del proyecto y su impacto.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACTO -->
-  <section id="contacto" class="py-5 bg-light">
+  <!-- MISSION -->
+  <section id="mission" class="py-5">
     <div class="container">
-      <h2 class="text-center fw-bold mb-4" data-lang-key="contact_t">Contáctanos</h2>
+      <h3 data-i18n="mission_title">Misión</h3>
+      <p class="text-muted" data-i18n="mission_text">Promover el desarrollo sostenible y la innovación en Quebec mediante la gestión integral de proyectos sociales, tecnológicos y educativos.<br>
+        Ofrecemos formación profesional, asesoría técnica y soluciones accesibles —desde cursos de certificación hasta reciclaje electrónico— con el fin de apoyar a emprendedores, comunidades y organizaciones a alcanzar sus metas con eficiencia, ética y responsabilidad social.</p>
+    </div>
+  </section>
+
+  <!-- VISION -->
+  <section id="vision" class="py-5 bg-light">
+    <div class="container">
+      <h3 data-i18n="vision_title">Visión</h3>
+      <p class="text-muted" data-i18n="vision_text">Ser una organización líder en Quebec en la gestión y acompañamiento de proyectos que impulsen la transformación social, tecnológica y ambiental, reconocida por su compromiso con la excelencia, la inclusión y el desarrollo de una economía circular y solidaria.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-3" data-i18n="contact_title">Contacto</h2>
+
       <div class="row justify-content-center">
         <div class="col-lg-8">
-          <form id="contactForm">
-            <div class="row g-3">
-              <div class="col-md-6">
-                <input type="text" class="form-control" placeholder="Nombre / Nom" data-lang-key-placeholder="contact_name">
-              </div>
-              <div class="col-md-6">
-                <input type="email" class="form-control" placeholder="Correo / Courriel" data-lang-key-placeholder="contact_email">
-              </div>
-              <div class="col-12">
-                <textarea class="form-control" rows="6" placeholder="Mensaje / Message" data-lang-key-placeholder="contact_message"></textarea>
-              </div>
-              <div class="col-12 text-center">
-                <button type="button" class="btn btn-success btn-lg" id="sendBtn" data-lang-key="contact_send">Enviar</button>
-              </div>
+          <form id="contactForm" class="row g-3">
+            <div class="col-md-6">
+              <input type="text" class="form-control" id="name" placeholder="Nombre" data-i18n-placeholder="ph_name">
+            </div>
+            <div class="col-md-6">
+              <input type="email" class="form-control" id="email" placeholder="Correo" data-i18n-placeholder="ph_email">
+            </div>
+            <div class="col-12">
+              <textarea class="form-control" id="message" rows="5" placeholder="Mensaje" data-i18n-placeholder="ph_message"></textarea>
+            </div>
+            <div class="col-12 text-center">
+              <button type="button" id="sendBtn" class="btn btn-accent btn-lg" data-i18n="contact_send">Enviar</button>
+              <p class="small text-muted mt-2">(Formulario visual — sin envío por ahora)</p>
             </div>
           </form>
-          <p class="small text-muted mt-3 text-center">(Formulario visual — sin envío real por ahora)</p>
         </div>
       </div>
+
+      <div class="text-center mt-4 text-muted">Québec, Canadá — <a href="mailto:info@qcgp.org">info@qcgp.org</a></div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="bg-white border-top">
-    <div class="container py-4 d-flex flex-column flex-md-row justify-content-between align-items-center">
-      <div class="text-muted">Québec, Canadá — <a href="mailto:info@qcgp.org">info@qcgp.org</a></div>
-      <div class="text-muted small">© <span id="year"></span> Québec Gestion des Projets</div>
+  <footer class="py-4 footer-dark">
+    <div class="container text-center text-light small">
+      © <span id="year"></span> Québec Gestion des Projets — ONG de desarrollo y sostenibilidad
     </div>
   </footer>
 
-  <!-- Bootstrap JS bundle -->
+  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
   <!-- Custom JS -->
-  <script src="asset/js/scripts.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
