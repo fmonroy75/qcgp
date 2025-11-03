@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
         hero_sub: "Apoyamos la innovación, el desarrollo y la colaboración sostenible en Québec y más allá.",
         cta_about: "Conócenos",
         about_title: "Quiénes Somos",
-        about_text: "Québec Gestion des Projets (QGP) es una organización con fines de lucro que impulsa proyectos que generan valor para la sociedad, tanto en Quebec como en el mundo.<br>Promueve la eficiencia, la transparencia y la comprensión de los puntos clave del proyecto, tanto para entidades públicas como privadas.<br>Ofrece asistencia técnica, consultorías especializadas, implementación de oficinas de gestión de proyectos (PMO), capacitación y certificaciones, así como programas de apoyo para personas y organizaciones, financiación para buenas prácticas de gestión de proyectos y nuevas experiencias.",
+        about_text: "Québec Gestion de Projets (QGP) es una organización con fines de lucro que impulsa proyectos que generan valor para la sociedad, tanto en Quebec como en el mundo.<br>Promueve la eficiencia, la transparencia y la comprensión de los puntos clave del proyecto, tanto para entidades públicas como privadas.<br>Ofrece asistencia técnica, consultorías especializadas, implementación de oficinas de gestión de proyectos (PMO), capacitación y certificaciones, así como programas de apoyo para personas y organizaciones, financiación para buenas prácticas de gestión de proyectos y nuevas experiencias.",
         about_cta: "Ver servicios",
         services_title: "Servicios",
         srv_courses: "Cursos y certificaciones", srv_courses_txt: "PMP, PM, Cisco y formación en idiomas para emprendedores y equipos.",
