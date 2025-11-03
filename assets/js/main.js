@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
         hero_sub: "Apoyamos la innovación, el desarrollo y la colaboración sostenible en Québec y más allá.",
         cta_about: "Conócenos",
         about_title: "Quiénes Somos",
-        about_text: "Québec Gestion des Projets (QGP) es una organización sin fines de lucro que impulsa proyectos con propósito y sostenibilidad. Ofrecemos formación, acompañamiento técnico, consultorías y programas de reciclaje electrónico para apoyar a emprendedores y comunidades.",
+        about_text: "Québec Gestion des Projets (QGP) es una organización con fines de lucro que impulsa proyectos que generan valor para la sociedad, tanto en Quebec como en el mundo.<br>Promueve la eficiencia, la transparencia y la comprensión de los puntos clave del proyecto, tanto para entidades públicas como privadas.<br>Ofrece asistencia técnica, consultorías especializadas, implementación de oficinas de gestión de proyectos (PMO), capacitación y certificaciones, así como programas de apoyo para personas y organizaciones, financiación para buenas prácticas de gestión de proyectos y nuevas experiencias.",
         about_cta: "Ver servicios",
         services_title: "Servicios",
         srv_courses: "Cursos y certificaciones", srv_courses_txt: "PMP, PM, Cisco y formación en idiomas para emprendedores y equipos.",
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
         hero_sub: "Nous soutenons l'innovation, le développement et la collaboration durable au Québec et au-delà.",
         cta_about: "Nous connaître",
         about_title: "Qui sommes-nous",
-        about_text: "Québec Gestion des Projets (QGP) est une organisation à but non lucratif qui soutient des projets à vocation durable. Nous offrons formation, accompagnement technique, conseils et programmes de recyclage électronique pour aider entrepreneurs et communautés.",
+        about_text: "Gestion de projets Québec (GPP) est une organisation privée qui a fait ses preuves dans la conduite de projets créateurs de valeur pour la société, tant au Québec qu’à l’international. Elle offre de l’assistance technique, des services de consultation spécialisés, la mise en place de bureaux de gestion de projets (BGP), de la formation et des certifications, ainsi que des programmes de soutien aux particuliers et aux organisations, du financement pour les meilleures pratiques en gestion de projets et des initiatives novatrices.",
         about_cta: "Voir les services",
         services_title: "Services",
         srv_courses: "Formations et certifications", srv_courses_txt: "PMP, PM, Cisco et formation en langues pour entrepreneurs et équipes.",
@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (translations[lang] && translations[lang][key]) {
           const text = translations[lang][key];
           // For mission_text and vision_text, use innerHTML to preserve line breaks
-          if (key === 'mission_text' || key === 'vision_text') {
+          if (key === 'mission_text' || key === 'vision_text' || key === 'about_text') {
             el.innerHTML = text.replace(/\n/g, '<br>');
           } else {
             el.textContent = text;
