@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
         srv_trans: "Traducción e interpretación", srv_trans_txt: "Servicios lingüísticos profesionales en ES/FR/EN.",
         srv_recycle: "Reciclaje electrónico", srv_recycle_txt: "Recolección y reacondicionamiento de equipos.",
         mission_title: "Misión", mission_text: "Promover el desarrollo sostenible y la innovación en Quebec mediante la gestión integral de proyectos sociales, tecnológicos y educativos.\nOfrecemos formación profesional, asesoría técnica y soluciones accesibles —desde cursos de certificación hasta reciclaje electrónico— con el fin de apoyar a emprendedores, comunidades y organizaciones a alcanzar sus metas con eficiencia, ética y responsabilidad social.",
-        vision_title: "Visión", vision_text: "Ser una organización líder en Quebec en la gestión y acompañamiento de proyectos que impulsen la transformación social, tecnológica y ambiental, reconocida por su compromiso con la excelencia, la inclusión y el desarrollo de una economía circular y solidaria.",
+        vision_title: "Visión", vision_text: "Québec Gestion de Projets (QGP) impulsa proyectos que generan valor para la sociedad, tanto en Québec como a nivel internacional. Fomentamos la eficiencia, la transparencia y la comprensión de los aspectos clave de cada proyecto, trabajando con entidades públicas y privadas.Ofrecemos asistencia técnica, consultorías especializadas, implementación de oficinas de gestión de proyectos (PMO), capacitación, certificaciones, acompañamineto y programas de desarrollo de buenas prácticas.",
         contact_title: "Contacto", ph_name: "Nombre", ph_email: "Correo", ph_message: "Mensaje", contact_send: "Enviar"
       },
       fr: {
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
         hero_sub: "Nous soutenons l'innovation, le développement et la collaboration durable au Québec et au-delà.",
         cta_about: "Nous connaître",
         about_title: "Qui sommes-nous",
-        about_text: "Gestion de projets Québec (GPP) est une organisation privée qui a fait ses preuves dans la conduite de projets créateurs de valeur pour la société, tant au Québec qu’à l’international. Elle offre de l’assistance technique, des services de consultation spécialisés, la mise en place de bureaux de gestion de projets (BGP), de la formation et des certifications, ainsi que des programmes de soutien aux particuliers et aux organisations, du financement pour les meilleures pratiques en gestion de projets et des initiatives novatrices.",
+        about_text: "Gestion de projets Québec (QGP) est une organisation privée qui a fait ses preuves dans la conduite de projets créateurs de valeur pour la société, tant au Québec qu’à l’international. Elle offre de l’assistance technique, des services de consultation spécialisés, la mise en place de bureaux de gestion de projets (BGP), de la formation et des certifications, ainsi que des programmes de soutien aux particuliers et aux organisations, du financement pour les meilleures pratiques en gestion de projets et des initiatives novatrices.",
         about_cta: "Voir les services",
         services_title: "Services",
         srv_courses: "Formations et certifications", srv_courses_txt: "PMP, PM, Cisco et formation en langues pour entrepreneurs et équipes.",
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
         srv_trans: "Traduction et interprétation", srv_trans_txt: "Services linguistiques professionnels en FR/EN/ES.",
         srv_recycle: "Recyclage électronique", srv_recycle_txt: "Collecte et remise en état d'équipements.",
         mission_title: "Mission", mission_text: "Promouvoir le développement durable et l'innovation au Québec grâce à la gestion intégrée de projets sociaux, technologiques et éducatifs.\nNous offrons formation professionnelle, conseil technique et solutions accessibles —des cours de certification au recyclage électronique— afin de soutenir entrepreneurs, communautés et organisations à atteindre leurs objectifs avec efficacité, éthique et responsabilité sociale.",
-        vision_title: "Vision", vision_text: "Être une organisation leader au Québec en gestion et accompagnement de projets qui stimulent la transformation sociale, technologique et environnementale, reconnue pour son engagement envers l'excellence, l'inclusion et le développement d'une économie circulaire et solidaire.",
+        vision_title: "Vision", vision_text: "Québec Gestion de Projets (QGP) pilote des projets créateurs de valeur pour la société, au Québec et à l’international. Nous favorisons l’efficacité, la transparence et une compréhension approfondie des enjeux clés de chaque projet, en collaboration avec les entités publiques et privées. Nous offrons de l’assistance technique, des services de consultation spécialisés, la mise en place de bureaux de gestion de projet (BGP), de la formation, des certifications, du mentorat et des programmes de développement des meilleures pratiques.",
         contact_title: "Contact", ph_name: "Nom", ph_email: "Courriel", ph_message: "Message", contact_send: "Envoyer"
       }
     };
