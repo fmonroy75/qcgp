@@ -1,58 +1,28 @@
-# Québec Gestion des Projets 🌐
+# Entrenamiento Intensivo PMP® — Landing Page
 
-Sitio web institucional bilingüe (Español / Francés) para la ONG **Québec Gestion des Projets**, dedicada a la **gestión sostenible de proyectos** y al acompañamiento de emprendedores en Quebec, Canadá.
+Landing page de conversión para **Eduardo Bazo, PMP®**, profesional que ofrece preparación intensiva para la certificación **PMP®** del Project Management Institute (PMI).
 
----
-
-## 🧭 Descripción general
-
-Este proyecto representa la página web principal de **Québec Gestion des Projets (QGDP)**, una organización sin fines de lucro enfocada en promover el desarrollo sostenible, la innovación tecnológica y el apoyo a emprendedores a través de la gestión profesional de proyectos.
-
-El sitio está desarrollado con **HTML5**, **Bootstrap 5.3**, **JavaScript**, y la tipografía **Poppins** de Google Fonts.
-
-Incluye:
-- Diseño **moderno y responsivo**.
-- Estructura bilingüe (ES / FR) con cambio de idioma dinámico.
-- **Navbar fija** con efecto de transparencia y sombra al hacer scroll.
-- **Hero section** con efecto de tipeo (*typewriter*).
-- Secciones de presentación institucional: *Quiénes Somos*, *Servicios*, *Misión*, *Visión*, *Contacto*.
-- Animaciones suaves y transiciones visuales.
-- **Footer** con datos de contacto y ubicación.
+El sitio presenta el programa, la metodología, el perfil del instructor y enlaces directos a **WhatsApp** para consultas e inscripción.
 
 ---
 
-## 🗂️ Estructura del proyecto
+## Descripción
 
-/assets
-├── css/
-│ └── style.css # Estilos personalizados
-├── js/
-│ └── main.js # Scripts para animaciones e idioma
-└── img/
-├── logo.png # Logo institucional
-├── quebec-city.jpg
-├── cursos.jpg
-├── web.jpg
-├── traduccion.jpg
-└── reciclaje.jpg
-index.html # Página principal
-README.md # Este archivo
+Página de una sola vista (`index.html`) orientada a captar leads y comunicar valor del entrenamiento:
 
+- **Hero** con propuesta de valor, imagen del instructor y contador regresivo (fecha objetivo configurable en el script).
+- **Metodología**: clases en vivo, simulador PMP (1200+ preguntas) y desarrollo del *Mindset PMI*.
+- **Instructor** (`#instructor`): credenciales, experiencia y enfoque situacional del examen.
+- **Programa** (`#programa`): hoja de ruta de 6 semanas (Personas, Procesos, Ágiles, Negocio, estrategia de examen, simulacros).
+- **CTA final** y **footer** con aviso de marcas PMI e IngeniumBright (desarrollo).
 
 ---
 
-## ⚙️ Tecnologías utilizadas
 
-- **HTML5**
-- **CSS3 / Bootstrap 5.3**
-- **JavaScript ES6**
-- **Google Fonts (Poppins)**
-- **Imágenes públicas de Unsplash (temporalmente)**
+## Aviso legal
+
+PMI, PMP®, CAPM y demás marcas mencionadas en el sitio son propiedad del **Project Management Institute, Inc.** El contenido del entrenamiento y la landing son responsabilidad del instructor; revisa cumplimiento de uso de marcas registradas PMI al publicar.
 
 ---
 
-## 🚀 Cómo ejecutar el sitio
-
-1. Descarga o clona el repositorio:
-   ```bash
-   git clone https://github.com/tuusuario/qgdp.git
+**Desarrollo web:** [IngeniumBright](https://www.ingeniumbright.com)
