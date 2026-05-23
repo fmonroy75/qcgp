@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://eduardobazopmp.ingeniumbright.com/sitemap.xml
