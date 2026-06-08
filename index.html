@@ -45,31 +45,92 @@
 
   <!-- Structured Data / Schema.org (Google Rich Results) -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Course",
-    "name": "Entrenamiento Intensivo PMP®",
-    "description": "Domina la metodología PMP® como un estratega. Preparación estratégica con Eduardo Bazo: clases en vivo, simuladores adaptativos y mentalidad PMI.",
-    "provider": {
-      "@type": "Organization",
-      "name": "IngeniumBright",
-      "url": "https://www.ingeniumbright.com"
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Entrenamiento Intensivo PMP®",
+      "description": "Domina la metodología PMP® como un estratega. Preparación estratégica con Eduardo Bazo: clases en vivo, simuladores adaptativos y mentalidad PMI.",
+      "educationalCredentialAwarded": "Certificación PMP® (Project Management Professional)",
+      "courseMode": "Online",
+      "courseWorkload": "PT6W",
+      "courseCode": "PMP-INTENSIVO",
+      "provider": {
+        "@type": "Organization",
+        "name": "IngeniumBright Academy",
+        "url": "https://eduardobazopmp.ingeniumbright.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "IngeniumBright",
+        "url": "https://www.ingeniumbright.com"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Eduardo Bazo",
+        "jobTitle": "PMP, PMI-ACP"
+      },
+      "offers": {
+        "@type": "Offer",
+        "category": "Subscription",
+        "availability": "https://schema.org/LimitedAvailability",
+        "url": "https://wa.me/15142967186?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20entrenamiento%20intensivo%20PMP%20antes%20del%20cambio%20de%20versi%C3%B3n"
+      }
     },
-    "publisher": {
-      "@type": "Organization",
-      "name": "IngeniumBright",
-      "url": "https://www.ingeniumbright.com"
-    },
-    "author": {
-      "@type": "Person",
-      "name": "Eduardo Bazo"
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cuándo se realiza el cambio de versión del examen PMP®?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El cambio oficial de versión del examen PMP® está programado para Julio de 2026. Prepararse intensivamente antes de esta fecha es la mejor estrategia para asegurar la certificación con la metodología conocida."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿En qué consiste la metodología del Entrenamiento Intensivo PMP®?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Es un programa de 6 semanas de inmersión total en vivo con Eduardo Bazo. Está diseñado no para memorizar, sino para desarrollar el 'Mindset PMI' y aprender a resolver los escenarios situacionales reales del examen de certificación."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué incluye el Simulador PMP® avanzado?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El simulador incluye acceso a más de 1200 preguntas situacionales bajo las mismas condiciones y entorno real del examen de certificación PMP®, con retroalimentación detallada y estadísticas de rendimiento por pregunta."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿El curso otorga las horas de contacto (contact hours) exigidas por el PMI®?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí, este entrenamiento te proporciona las horas de educación en gestión de proyectos exigidas por el Project Management Institute (PMI) para poder postular al examen oficial de certificación PMP®."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¡Quiero inscribirme! ¿Cómo reservo mi cupo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Puedes reservar tu cupo de inmediato haciendo clic en el botón de WhatsApp en la página. Un asesor se comunicará contigo para confirmar el proceso de inscripción y coordinar los detalles de acceso."
+          }
+        }
+      ]
     }
-  }
+  ]
   </script>
 
-  <!-- Fonts -->
+  <!-- Fonts & CDN Preconnects -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="preconnect" href="https://unpkg.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -173,7 +234,7 @@
       min-height: 100vh;
       display: flex;
       align-items: center;
-      padding: 140px 0 100px;
+      padding: 180px 0 100px;
       overflow: hidden;
       background: radial-gradient(circle at 0% 0%, rgba(245, 166, 35, 0.05) 0%, transparent 50%),
                   radial-gradient(circle at 100% 100%, rgba(245, 166, 35, 0.05) 0%, transparent 50%);
@@ -283,7 +344,7 @@
       font-size: 1.5rem;
     }
 
-    .stat-text h4 { font-size: 1.6rem; margin-bottom: 2px; color: #fff; }
+    .stat-text .stat-number { font-size: 1.6rem; margin-bottom: 2px; color: #fff; font-family: 'Outfit', sans-serif; font-weight: 700; }
     .stat-text p { font-size: 0.9rem; color: var(--text-muted); }
 
     @keyframes float {
@@ -653,10 +714,13 @@
       font-size: 1.8rem;
     }
 
-    .brand-text h5 {
+    .brand-text .brand-name {
       color: #fff;
       margin-bottom: 4px;
       font-size: 1.3rem;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      display: block;
     }
 
     .brand-text p {
@@ -685,9 +749,236 @@
       .cta-title { font-size: 2.5rem; }
       .footer-content { flex-direction: column; text-align: center; }
     }
+
+    /* Accessibility Skip Link */
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 20px;
+      background: var(--primary);
+      color: #000;
+      padding: 10px 20px;
+      z-index: 2001;
+      border-radius: 0 0 8px 8px;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      text-decoration: none;
+      transition: top 0.3s ease;
+    }
+    .skip-link:focus {
+      top: 0;
+    }
+
+    /* Sticky Header Glassmorphic Navigation */
+    .main-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px 0;
+      z-index: 1000;
+      background: rgba(7, 11, 17, 0.4);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      transition: all 0.4s ease;
+    }
+    
+    .main-header.scrolled {
+      padding: 12px 0;
+      background: rgba(7, 11, 17, 0.85);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .header-logo {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: #fff;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .header-logo span {
+      color: var(--primary);
+    }
+    
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 32px;
+      align-items: center;
+    }
+    
+    .nav-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+    
+    .nav-link:hover {
+      color: var(--primary);
+    }
+    
+    .nav-btn {
+      padding: 10px 24px !important;
+      font-size: 0.95rem !important;
+    }
+    
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      .nav-menu {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: rgba(7, 11, 17, 0.98);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        padding: 40px 24px;
+        gap: 24px;
+        transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        align-items: stretch;
+      }
+      .nav-menu.active {
+        left: 0;
+      }
+      .nav-menu .btn {
+        text-align: center;
+      }
+    }
+
+    /* FAQs Section Accordion */
+    .faqs-grid {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    
+    .faq-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    
+    .faq-item:hover {
+      border-color: rgba(245, 166, 35, 0.2);
+      background: var(--bg-card-hover);
+    }
+    
+    .faq-item.active {
+      border-color: rgba(245, 166, 35, 0.3);
+      background: rgba(255, 255, 255, 0.03);
+    }
+    
+    .faq-header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 32px;
+      background: none;
+      border: none;
+      color: #fff;
+      text-align: left;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      cursor: pointer;
+      gap: 20px;
+    }
+    
+    .faq-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      transition: transform 0.3s ease, background 0.3s ease;
+      flex-shrink: 0;
+    }
+    
+    .faq-item.active .faq-icon {
+      transform: rotate(180deg);
+      background: var(--primary);
+      color: #000;
+    }
+    
+    .faq-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .faq-content {
+      padding: 0 32px 24px 32px;
+      color: var(--text-muted);
+      font-weight: 300;
+      line-height: 1.7;
+      font-size: 1rem;
+    }
   </style>
 </head>
 <body>
+
+  <!-- SKIP TO CONTENT -->
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+  <!-- STICKY GLASSMORPHIC HEADER -->
+  <header class="main-header" id="main-header">
+    <div class="container header-container">
+      <a href="#" class="header-logo">
+        <i class="fas fa-graduation-cap"></i> Eduardo Bazo<span>.PMP</span>
+      </a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú de navegación">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav class="nav-menu" id="nav-menu">
+        <a href="#main-content" class="nav-link">Inicio</a>
+        <a href="#metodologia" class="nav-link">Metodología</a>
+        <a href="#instructor" class="nav-link">Instructor</a>
+        <a href="#programa" class="nav-link">Programa</a>
+        <a href="#faqs" class="nav-link">FAQs</a>
+        <a href="https://wa.me/15142967186?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20entrenamiento%20intensivo%20PMP%20antes%20del%20cambio%20de%20versi%C3%B3n" class="btn btn-primary nav-btn">
+          <i class="fab fa-whatsapp"></i> Inscribirse
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN WRAPPER FOR SEMANTIC HTML -->
+  <main id="main-content">
 
   <!-- HERO SECTION -->
   <section class="hero">
@@ -736,13 +1027,13 @@
 
       <div class="hero-image-wrapper" data-aos="fade-left" data-aos-delay="200">
         <!-- Imagen premium del relator -->
-        <img src="assets/img/eduardo-bazo.png" alt="Eduardo Bazo, PMP" class="hero-img">
+        <img src="assets/img/eduardo-bazo.png" alt="Eduardo Bazo, PMP - Mentor e Instructor de Certificación" class="hero-img" fetchpriority="high" decoding="async">
         
         <!-- Floating Stats -->
         <div class="floating-stat stat-1">
           <div class="stat-icon"><i class="fas fa-user-graduate"></i></div>
           <div class="stat-text">
-            <h4>+500</h4>
+            <div class="stat-number">+500</div>
             <p>Profesionales certificados</p>
           </div>
         </div>
@@ -750,7 +1041,7 @@
         <div class="floating-stat stat-2">
           <div class="stat-icon"><i class="fas fa-star"></i></div>
           <div class="stat-text">
-            <h4>100%</h4>
+            <div class="stat-number">100%</div>
             <p>Enfoque Situacional</p>
           </div>
         </div>
@@ -760,7 +1051,7 @@
   </section>
 
   <!-- FEATURES -->
-  <section class="section">
+  <section class="section" id="metodologia">
     <div class="container">
       <div class="section-header" data-aos="fade-up">
         <h2 class="section-title text-gradient">Metodología de Alto Rendimiento</h2>
@@ -791,7 +1082,7 @@
   <section class="section about-section" id="instructor">
     <div class="container about-grid">
       <div class="about-img-box" data-aos="fade-right">
-        <img src="assets/img/edu-casual.jpg" alt="Eduardo Bazo, PMP" class="about-img">
+        <img src="assets/img/edu-casual.jpg" alt="Eduardo Bazo, PMP - Director de Programa y Mentor" class="about-img" loading="lazy" decoding="async">
       </div>
       <div class="about-content" data-aos="fade-left">
         <h2 class="text-gradient">Eduardo Bazo</h2>
@@ -851,6 +1142,82 @@
     </div>
   </section>
 
+  <!-- FAQS SECTION -->
+  <section class="section faqs-section" id="faqs">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2 class="section-title text-gradient">Preguntas Frecuentes</h2>
+        <p class="section-subtitle">Todo lo que necesitas saber sobre el entrenamiento y el proceso de certificación</p>
+      </div>
+      
+      <div class="faqs-grid">
+        
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+          <button class="faq-header" aria-expanded="false">
+            <span>¿Cuándo se realiza el cambio de versión del examen PMP®?</span>
+            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+          </button>
+          <div class="faq-body">
+            <div class="faq-content">
+              El cambio oficial de versión del examen está programado para <strong>Julio de 2026</strong>. Prepararse intensivamente ahora con la versión y lógica conocida es la forma más segura y estratégica de certificarse sin contratiempos de último minuto.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+          <button class="faq-header" aria-expanded="false">
+            <span>¿En qué consiste el Entrenamiento Intensivo con Eduardo Bazo?</span>
+            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+          </button>
+          <div class="faq-body">
+            <div class="faq-content">
+              Es un programa de 6 semanas de inmersión total. A diferencia de los cursos tradicionales que te obligan a memorizar guías largas, Eduardo te enseña la lógica detrás de los estándares del PMI. Analizamos casos de estudio y situaciones reales para que adquieras el <strong>"Mindset PMI"</strong> indispensable para responder correctamente.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+          <button class="faq-header" aria-expanded="false">
+            <span>¿Qué incluye el Simulador PMP® de 1200+ preguntas?</span>
+            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+          </button>
+          <div class="faq-body">
+            <div class="faq-content">
+              El simulador recrea las condiciones reales del examen (tiempo, interfaz, distribución). Incluye más de 1200 preguntas situacionales del nuevo formato del examen y proporciona retroalimentación analítica detallada para cada opción (correctas e incorrectas), lo cual es crucial para corregir brechas de conocimiento rápidamente.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+          <button class="faq-header" aria-expanded="false">
+            <span>¿El curso me da las horas de contacto exigidas por el PMI®?</span>
+            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+          </button>
+          <div class="faq-body">
+            <div class="faq-content">
+              Sí. Al completar satisfactoriamente las sesiones y simulacros del entrenamiento, obtendrás el certificado que acredita las horas de educación en gestión de proyectos requeridas oficialmente por el PMI para validar tu postulación al examen de certificación PMP®.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
+          <button class="faq-header" aria-expanded="false">
+            <span>¿Cómo puedo inscribirme o reservar mi cupo?</span>
+            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+          </button>
+          <div class="faq-body">
+            <div class="faq-content">
+              Dado que mantenemos grupos reducidos para garantizar mentoría de alta calidad, la reserva se gestiona directamente a través de WhatsApp. Al hacer clic en los botones de inscripción de esta página, serás contactado de inmediato por nuestro equipo comercial para procesar tu registro y facilitar tus accesos al campus virtual.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  </main>
+
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container footer-content">
@@ -864,7 +1231,7 @@
           <div class="brand-logo"><i class="fas fa-microchip"></i></div>
           <div class="brand-text">
             <p>Tecnología & Desarrollo</p>
-            <h5>IngeniumBright</h5>
+            <span class="brand-name">IngeniumBright</span>
           </div>
         </div>
       </a>
@@ -876,6 +1243,69 @@
     // Inicializar animaciones
     AOS.init({ duration: 1000, once: true, offset: 50 });
     document.getElementById('year').innerText = new Date().getFullYear();
+
+    // Lógica del Header Sticky
+    const header = document.getElementById('main-header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // Menú móvil responsive
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      const icon = menuToggle.querySelector('i');
+      if (navMenu.classList.contains('active')) {
+        icon.className = 'fas fa-times';
+        menuToggle.setAttribute('aria-expanded', 'true');
+      } else {
+        icon.className = 'fas fa-bars';
+        menuToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // Cerrar menú al hacer clic en un enlace de navegación
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        menuToggle.querySelector('i').className = 'fas fa-bars';
+        menuToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Lógica del Acordeón FAQ
+    const faqHeaders = document.querySelectorAll('.faq-header');
+    faqHeaders.forEach(faqHeader => {
+      faqHeader.addEventListener('click', () => {
+        const faqItem = faqHeader.parentElement;
+        const faqBody = faqItem.querySelector('.faq-body');
+        
+        // Cerrar otros abiertos si se desea (opcional)
+        document.querySelectorAll('.faq-item').forEach(item => {
+          if (item !== faqItem && item.classList.contains('active')) {
+            item.classList.remove('active');
+            item.querySelector('.faq-header').setAttribute('aria-expanded', 'false');
+            item.querySelector('.faq-body').style.maxHeight = null;
+          }
+        });
+
+        faqItem.classList.toggle('active');
+        if (faqItem.classList.contains('active')) {
+          faqBody.style.maxHeight = faqBody.scrollHeight + "px";
+          faqHeader.setAttribute('aria-expanded', 'true');
+        } else {
+          faqBody.style.maxHeight = null;
+          faqHeader.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
 
     // Lógica del contador
     function updateCountdown() {
